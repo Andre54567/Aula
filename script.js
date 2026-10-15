@@ -1,4 +1,4 @@
-const URL = "https://fvybhuhalqdbnhctvav.supabase.co";
+const URL = "https://fvybhhuhalqdbnhctvav.supabase.co";
 
 const KEY = "sb_publishable_S5756VjaOtEmRQ6MIySG7A_4tuqS42Y";
 
