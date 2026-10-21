@@ -3,26 +3,45 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Loja de Roupas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Loja de Roupas</h1>
+    <header class="topo">
+        <h1>Loja de Roupas</h1>
+    </header>
 
-    <h2>Cadastrar produto</h2>
+    <main>
 
-    <input id="nome" placeholder="Nome do produto">
+        <section class="cadastro">
+            <h2>Cadastrar produto</h2>
 
-    <button onclick="salvar()">
-        Salvar
-    </button>
+            <label for="nome">Nome</label>
+            <input id="nome" placeholder="Ex: Camisa polo azul">
 
-    <p id="mensagem"></p>
+            <label for="preco">Preço (R$)</label>
+            <input id="preco" type="number" min="0" step="0.01" placeholder="Ex: 59.90">
 
-    <h2>Produtos cadastrados</h2>
+            <label for="imagem">Link da imagem</label>
+            <input id="imagem" placeholder="https://...">
 
-    <ul id="lista"></ul>
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" rows="3" placeholder="Tecido, tamanhos, cores..."></textarea>
+
+            <button onclick="salvar()">Salvar produto</button>
+
+            <p id="mensagem" role="status"></p>
+        </section>
+
+        <section class="catalogo">
+            <h2>Produtos cadastrados</h2>
+            <div id="lista" class="lista"></div>
+        </section>
+
+    </main>
 
     <script src="script.js"></script>
 
