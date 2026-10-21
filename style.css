@@ -198,7 +198,9 @@ button { color: inherit; }
 .product-count { margin: 0; color: #85877e; font-size: 11px; }
 
 .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 19px; }
-.product-card { min-width: 0; animation: reveal .35s ease both; }
+.product-card { min-width: 0; border-radius: 13px; transition: transform .38s cubic-bezier(.2,.65,.2,1), box-shadow .38s ease; }
+.product-card:hover { transform: translateY(-5px); }
+.product-card:hover .product-price { color: var(--green-dark); }
 .product-image { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 4.8; overflow: hidden; border-radius: 13px; background: #ebe9e0; }
 .product-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .55s cubic-bezier(.2,.65,.2,1); }
 .product-card:hover .product-image img { transform: scale(1.045); }
@@ -331,6 +333,65 @@ button { color: inherit; }
     .product-grid { gap: 20px 9px; }
     .product-title-row { gap: 5px; }
     .product-number { display: none; }
+}
+
+
+/* ---------- microinterações e movimento ---------- */
+html { scroll-behavior: smooth; }
+
+html.motion-enabled .reveal-on-scroll {
+    opacity: 0;
+    translate: 0 22px;
+    transition:
+        opacity .72s cubic-bezier(.2,.7,.2,1),
+        translate .72s cubic-bezier(.2,.7,.2,1);
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+html.motion-enabled .reveal-on-scroll.is-visible {
+    opacity: 1;
+    translate: 0 0;
+}
+
+.hero-art .art-panel {
+    transform-origin: 50% 55%;
+    animation: aula-panel-float 7s ease-in-out infinite;
+}
+
+.hero-art .orbit-one { animation: aula-orbit 46s linear infinite; }
+.hero-art .orbit-two { animation: aula-orbit 62s linear infinite reverse; }
+.hero-art .shape-circle { animation: aula-shape-drift 8s ease-in-out infinite; }
+.hero-art .shape-block { animation: aula-shape-drift 9s ease-in-out infinite reverse; }
+.hero-art .art-spark { display: inline-block; animation: aula-spark 4s ease-in-out infinite; }
+.eyebrow-dot { animation: aula-dot-pulse 3.4s ease-in-out infinite; }
+
+.button:active { transform: translateY(0) scale(.98); }
+.nav-cta span, .button span:last-child { transition: transform .25s ease; }
+.nav-cta:hover span, .button:hover span:last-child { transform: translate(2px, -2px); }
+.product-image { background-image: linear-gradient(135deg, rgba(255,255,255,.05), transparent 55%); }
+.product-image img { will-change: transform; }
+.search-box { transition: border-color .25s ease, box-shadow .25s ease, background .25s ease; }
+.search-box:focus-within { background: #fff; }
+
+@keyframes aula-panel-float {
+    0%, 100% { transform: translateY(0) rotate(4deg); }
+    50% { transform: translateY(-8px) rotate(2.5deg); }
+}
+@keyframes aula-orbit {
+    from { rotate: 0deg; }
+    to { rotate: 360deg; }
+}
+@keyframes aula-shape-drift {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -8px; }
+}
+@keyframes aula-spark {
+    0%, 100% { rotate: 0deg; scale: 1; }
+    50% { rotate: 12deg; scale: 1.08; }
+}
+@keyframes aula-dot-pulse {
+    0%, 100% { opacity: .7; }
+    50% { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {

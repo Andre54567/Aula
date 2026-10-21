@@ -10,6 +10,38 @@ const formMessage = document.getElementById("mensagem");
 const saveButton = document.getElementById("botao-salvar");
 
 let products = [];
+let revealObserver = null;
+
+function observeReveal(element, delay = 0) {
+    if (!revealObserver || !element) return;
+    element.classList.add("reveal-on-scroll");
+    element.style.setProperty("--reveal-delay", `${delay}ms`);
+    revealObserver.observe(element);
+}
+
+function initializeScrollAnimations() {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion || !("IntersectionObserver" in window)) return;
+
+    document.documentElement.classList.add("motion-enabled");
+    revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: "0px 0px -7% 0px",
+        threshold: 0.12
+    });
+
+    const targets = document.querySelectorAll(
+        ".hero-copy, .hero-art, .section-heading, .manage-copy, .product-form, .footer-inner"
+    );
+    targets.forEach((element, index) => observeReveal(element, (index % 3) * 90));
+}
 
 function formatPrice(value) {
     if (value === null || value === undefined || value === "") {
@@ -161,6 +193,7 @@ function renderProducts() {
         info.append(titleRow, price, description);
         card.append(visual, info);
         productList.appendChild(card);
+        observeReveal(card, Math.min(position, 5) * 65);
     });
 }
 
@@ -272,4 +305,5 @@ form.addEventListener("submit", async (event) => {
 
 searchInput.addEventListener("input", renderProducts);
 
+initializeScrollAnimations();
 listarProdutos();
