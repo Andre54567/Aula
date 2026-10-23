@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f3efe7">
-    <meta name="description" content="Descubra a história, os detalhes e como comprar esta peça da Aula.">
-    <title>Peça em destaque | Aula</title>
+    <meta name="theme-color" content="#f4f4f1">
+    <meta name="description" content="Veja os detalhes e como comprar esta peça da Aula.">
+    <title>Produto | Aula</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="produto.css">
     <script src="produto.js" defer></script>
@@ -13,16 +16,18 @@
 <body>
     <a class="skip-link" href="#conteudo-produto">Pular para o produto</a>
 
+    <div class="announcement-bar">
+        <span class="announcement-inner"><span class="announcement-dot" aria-hidden="true"></span> AULA STUDIO <span class="announcement-divider">/</span> PEÇAS PARA A VIDA REAL</span>
+    </div>
+
     <header class="site-header">
-        <div class="header-inner">
-            <a class="brand" href="index.html" aria-label="Aula — página inicial">
+        <div class="header-main section-wrap product-header">
+            <a class="brand" href="index.html" aria-label="Aula — início">
                 <span class="brand-mark" aria-hidden="true">a.</span>
-                <span class="brand-name">aula<span class="brand-period">.</span></span>
+                <span class="brand-name">Aula<span class="brand-period">.</span></span>
             </a>
-            <nav class="main-nav" aria-label="Navegação principal">
-                <a href="index.html#catalogo">Coleção</a>
-                <a class="nav-cta" href="index.html#adicionar">Aula Studio <span aria-hidden="true">↗</span></a>
-            </nav>
+            <a class="product-header-back" href="index.html#catalogo"><span aria-hidden="true">←</span> Voltar à coleção</a>
+            <a class="header-cta" href="index.html#adicionar">Área da loja <span aria-hidden="true">↗</span></a>
         </div>
     </header>
 
@@ -30,14 +35,14 @@
         <nav class="breadcrumbs" aria-label="Você está aqui">
             <a href="index.html">Início</a>
             <span aria-hidden="true">/</span>
-            <a href="index.html#catalogo">Catálogo</a>
+            <a href="index.html#catalogo">Coleção</a>
             <span aria-hidden="true">/</span>
             <span id="breadcrumb-product">Produto</span>
         </nav>
 
         <div id="product-loading" class="detail-state" role="status">
             <span class="loading-dot" aria-hidden="true"></span>
-            <p>Preparando os detalhes desta peça...</p>
+            <p>Carregando os detalhes do produto...</p>
         </div>
 
         <section class="product-detail" id="product-detail" aria-labelledby="product-name" hidden>
@@ -50,7 +55,7 @@
             </div>
 
             <div class="detail-copy">
-                <p class="eyebrow"><span class="eyebrow-dot"></span> AULA / DETALHES DA PEÇA</p>
+                <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> DETALHES DO PRODUTO</p>
                 <h1 id="product-name">Nome do produto</h1>
                 <p class="detail-price" id="product-price"></p>
                 <div class="detail-rule"></div>
@@ -65,30 +70,31 @@
                         <span>Comprar agora</span><span aria-hidden="true">↗</span>
                     </a>
                     <p class="purchase-helper" id="purchase-helper" role="status" hidden></p>
-                    <p class="purchase-note">A finalização será feita no endereço de compra configurado para este produto.</p>
+                    <p class="purchase-note">A compra será concluída no endereço configurado para este produto.</p>
                 </div>
 
-                <a class="detail-back-link" href="index.html#catalogo"><span aria-hidden="true">←</span> Voltar para a coleção</a>
+                <a class="detail-back-link" href="index.html#catalogo"><span aria-hidden="true">←</span> Ver outros produtos</a>
             </div>
         </section>
 
         <section class="detail-state detail-error" id="product-error" role="status" hidden>
-            <span class="detail-error-mark" aria-hidden="true">—</span>
-            <h1 id="error-title">Não encontramos esta peça.</h1>
-            <p id="error-message">Confira o catálogo e escolha outro produto.</p>
-            <a class="button button-dark" href="index.html#catalogo">Voltar ao catálogo <span aria-hidden="true">↗</span></a>
+            <span class="detail-error-mark" aria-hidden="true">!</span>
+            <h1 id="error-title">Produto não encontrado</h1>
+            <p id="error-message">Volte à coleção e escolha outra peça.</p>
+            <a class="button button-dark" href="index.html#catalogo">Voltar à coleção <span aria-hidden="true">→</span></a>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="footer-inner section-wrap">
-            <a class="brand footer-brand" href="index.html" aria-label="Aula — voltar ao início">
+        <div class="footer-main section-wrap">
+            <a class="brand footer-brand" href="index.html" aria-label="Aula — início">
                 <span class="brand-mark" aria-hidden="true">a.</span>
-                <span class="brand-name">aula<span class="brand-period">.</span></span>
+                <span class="brand-name">Aula<span class="brand-period">.</span></span>
             </a>
-            <p>O essencial, bem escolhido.</p>
-            <a class="back-top" href="index.html#catalogo">Voltar à coleção ↑</a>
+            <p>O essencial, do seu jeito.</p>
+            <a class="footer-back-top" href="index.html#catalogo">Voltar à coleção ↑</a>
         </div>
+        <div class="footer-bottom section-wrap"><span>© AULA STUDIO</span><span>FEITO PARA O SEU DIA A DIA.</span><a href="index.html#catalogo">Ver coleção ↑</a></div>
     </footer>
 </body>
 </html>
