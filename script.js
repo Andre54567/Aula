@@ -12,6 +12,14 @@ const saveButton = document.getElementById("botao-salvar");
 let products = [];
 let revealObserver = null;
 
+function setHeroFeaturePrice(element, value) {
+    element.replaceChildren(document.createTextNode(value + " "));
+    const arrow = document.createElement("span");
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "↗";
+    element.appendChild(arrow);
+}
+
 function renderHeroFeature() {
     const featureLink = document.getElementById("hero-feature-link");
     const featureImage = document.getElementById("hero-feature-image");
@@ -28,7 +36,7 @@ function renderHeroFeature() {
         featureLink.href = "#catalogo";
         featureLink.setAttribute("aria-label", "Explorar a coleção Aula");
         featureName.textContent = "A coleção começa aqui.";
-        featurePrice.textContent = "Descubra a seleção ↗";
+        setHeroFeaturePrice(featurePrice, "Descubra a seleção");
         const fallback = document.createElement("div");
         fallback.className = "hero-image-placeholder";
         fallback.innerHTML = '<span class="hero-placeholder-mark">A.</span><span>IMAGEM DA COLEÇÃO</span>';
@@ -39,7 +47,7 @@ function renderHeroFeature() {
     featureLink.href = "produto.html?id=" + encodeURIComponent(product.id);
     featureLink.setAttribute("aria-label", "Ver detalhes de " + (product.nome || "produto"));
     featureName.textContent = product.nome || "Produto em destaque";
-    featurePrice.textContent = formatPrice(product.preco);
+    setHeroFeaturePrice(featurePrice, formatPrice(product.preco));
 
     if (isSafeImageUrl(product.imagem)) {
         const image = document.createElement("img");
