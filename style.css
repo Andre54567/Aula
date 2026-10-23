@@ -1121,3 +1121,100 @@ body { background:var(--paper); color:var(--ink); font-family:var(--sans); font-
     .hero-feature-image img, .product-image img, .product-card { transition:none !important; }
     .hero-art:hover .hero-feature-image img, .product-card:hover .product-image img, .product-card:hover { transform:none !important; }
 }
+
+
+/* Ajuste de escala: reforça a leitura sem perder o minimalismo */
+.announcement-bar { font-size: 9px; letter-spacing: 1.15px; min-height: 32px; }
+.hero-copy .eyebrow,
+.catalog-title-side .eyebrow,
+.manifesto-main .eyebrow,
+.manage-copy .eyebrow,
+.form-heading .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.25px;
+}
+.hero-edition { font-size: 9px; letter-spacing: 1.05px; }
+.hero-description { font-size: 14px; line-height: 1.85; }
+.hero-bottomline { font-size: 9px; letter-spacing: .75px; }
+.hero-image-topline,
+.hero-image-footer { font-size: 8px; }
+.caption-overline { font-size: 8px; }
+.hero-feature-caption h2 { font-size: 22px; }
+.hero-feature-price { font-size: 11px; }
+
+.catalog { padding-top: 88px; }
+.catalog-title-side .eyebrow { margin-bottom: 15px; }
+.catalog-title-side h2 { font-size: clamp(42px, 4.4vw, 57px); }
+.catalog-heading-side > p { font-size: 12px; line-height: 1.8; }
+.search-box { width: 250px; min-height: 43px; gap: 9px; padding-inline: 13px; }
+.search-box input { font-size: 12px; }
+.search-icon { font-size: 25px; }
+.search-shortcut { display: inline; font-size: 10px; }
+.product-count { font-size: 10px; }
+.catalog-rule { padding: 11px 0; font-size: 8px; letter-spacing: .9px; margin-bottom: 20px; }
+.product-index { font-size: 8px; letter-spacing: .35px; padding: 6px 8px; }
+.product-title { font-size: 15px; line-height: 1.3; }
+.product-number { font-size: 9px; }
+.product-price { font-size: 14px; }
+.product-description { font-size: 11px; line-height: 1.65; }
+.catalog-foot > span { font-size: 8px; letter-spacing: .8px; }
+.catalog-foot a { font-size: 11px; }
+.manifesto-index { font-size: 8px; }
+.manifesto-copy > p { font-size: 12px; }
+.manage-kicker { font-size: 9px !important; }
+.manage-copy > p:not(.eyebrow) { font-size: 13px; }
+.manage-footnote { font-size: 11px; }
+.field label { font-size: 11px; }
+.field input, .field textarea { font-size: 12px; }
+.field-hint { font-size: 10px; }
+.form-required, .form-message { font-size: 10px; }
+.footer-inner > p, .back-top { font-size: 11px; }
+.footer-bottom { font-size: 8px; }
+
+@media (max-width: 980px) {
+    .catalog-title-side h2 { font-size: 46px; }
+    .catalog-heading-side > p { font-size: 11px; }
+    .search-box { width: 230px; }
+    .product-index { font-size: 7px; }
+    .product-title { font-size: 14px; }
+    .product-description { font-size: 10px; }
+}
+@media (max-width: 680px) {
+    .announcement-bar { min-height: 28px; font-size: 8px; }
+    .hero-copy .eyebrow { font-size: 9px; }
+    .hero-edition { font-size: 8px; }
+    .hero-description { font-size: 13px; }
+    .hero-bottomline { font-size: 8px; }
+    .hero-image-topline, .hero-image-footer { font-size: 7px; }
+    .hero-feature-caption h2 { font-size: 19px; }
+    .hero-feature-price { font-size: 10px; }
+    .catalog { padding-top: 56px; }
+    .catalog-title-side .eyebrow { font-size: 10px; }
+    .catalog-title-side h2 { font-size: clamp(42px, 11vw, 48px); }
+    .catalog-heading-side > p { font-size: 10px; }
+    .search-box { min-height: 39px; padding-inline: 9px; }
+    .search-box input { font-size: 11px; }
+    .search-icon { font-size: 23px; }
+    .product-count { font-size: 9px; }
+    .catalog-rule { font-size: 7px; letter-spacing: .45px; }
+    .product-index { top: 7px; left: 7px; padding: 5px 6px; font-size: 7px; letter-spacing: .2px; }
+    .product-title { font-size: 13px; line-height: 1.25; }
+    .product-number { font-size: 8px; }
+    .product-price { font-size: 12px; }
+    .product-description { font-size: 10px; line-height: 1.55; }
+    .catalog-foot > span { font-size: 7px; }
+    .catalog-foot a { font-size: 10px; }
+    .manifesto-index { font-size: 8px; }
+    .manifesto-copy > p { font-size: 11px; }
+    .manage-copy .eyebrow { font-size: 9px; }
+    .manage-kicker { font-size: 8px !important; }
+    .manage-copy > p:not(.eyebrow) { font-size: 12px; }
+    .manage-footnote { font-size: 10px; }
+    .field label { font-size: 11px; }
+    .field input, .field textarea { font-size: 12px; }
+    .footer-inner > p, .back-top { font-size: 10px; }
+}
+@media (max-width: 380px) {
+    .search-box input { font-size: 10px; }
+    .product-title { font-size: 12px; }
+}
