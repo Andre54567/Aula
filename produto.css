@@ -204,3 +204,37 @@
     .product-detail, .detail-visual > img { animation: none !important; }
     .detail-visual > img, .detail-visual:hover > img { transition: none !important; transform: none !important; }
 }
+
+
+/* Direção editorial aplicada à página de produto */
+.detail-page { padding-top:28px; padding-bottom:100px; }
+.breadcrumbs { padding-bottom:13px; border-bottom:1px solid var(--line); margin-bottom:34px; font-size:8px; text-transform:uppercase; letter-spacing:1.1px; }
+.product-detail { grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr); gap:clamp(38px,8vw,110px); align-items:start; }
+.detail-visual { aspect-ratio:4/5.1; min-height:0; border-radius:0; border:0; background:#e6dfd4; }
+.detail-visual > img { object-fit:cover; mix-blend-mode:multiply; }
+.detail-image-tag { top:15px; left:15px; border-radius:0; font-size:8px; letter-spacing:1px; }
+.detail-copy { padding-top:26px; position:sticky; top:125px; }
+.detail-copy .eyebrow { font-size:8px; letter-spacing:1.55px; margin-bottom:25px; }
+.detail-copy h1 { font:500 clamp(44px,5.2vw,72px)/.9 var(--serif); letter-spacing:-1.9px; }
+.detail-price { margin-top:22px; color:var(--green); font:600 20px/1.3 var(--sans); letter-spacing:0; }
+.detail-rule { margin:31px 0; background:var(--line); }
+.detail-overline { font-size:8px; letter-spacing:1.5px; }
+.detail-description { font-size:12px; line-height:1.95; color:#6e695f; }
+.purchase-area { margin-top:35px; }
+.purchase-button { max-width:none; min-height:54px; border-radius:0; background:var(--green); justify-content:space-between; font-size:10px; letter-spacing:.6px; }
+.purchase-button:hover { background:var(--green-dark); }
+.purchase-helper { border-radius:0; background:#e8e3d9; font-size:10px; }
+.purchase-note { font-size:9px; color:#8d877c; }
+.detail-back-link { margin-top:33px; border-bottom-color:#a9a193; font-size:9px; letter-spacing:.45px; text-transform:uppercase; }
+.detail-placeholder { border-radius:0; background:linear-gradient(145deg,#e8e1d6,#d5cabb); }
+@media (max-width:760px) {
+    .detail-page { padding-top:22px; padding-bottom:60px; }
+    .breadcrumbs { margin-bottom:22px; }
+    .product-detail { grid-template-columns:1fr; gap:28px; }
+    .detail-visual { aspect-ratio:4/4.7; max-height:none; }
+    .detail-copy { padding-top:0; position:static; }
+    .detail-copy h1 { font-size:clamp(46px,12vw,65px); }
+    .detail-price { font-size:19px; }
+    .detail-rule { margin:24px 0; }
+    .purchase-area { margin-top:26px; }
+}
