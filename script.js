@@ -70,6 +70,17 @@ function isSafeImageUrl(value) {
     }
 }
 
+function isSafePurchaseUrl(value) {
+    if (!value) return false;
+
+    try {
+        const url = new URL(value);
+        return url.protocol === "https:";
+    } catch {
+        return false;
+    }
+}
+
 function createImage(product) {
     const wrapper = document.createElement("div");
     wrapper.className = "product-image";
@@ -163,8 +174,10 @@ function renderProducts() {
     }
 
     filtered.forEach((product, position) => {
-        const card = document.createElement("article");
+        const card = document.createElement("a");
         card.className = "product-card";
+        card.href = "produto.html?id=" + encodeURIComponent(product.id);
+        card.setAttribute("aria-label", "Ver detalhes de " + (product.nome || "produto"));
 
         const visual = createImage(product);
         const info = document.createElement("div");
@@ -203,7 +216,7 @@ async function listarProdutos() {
 
     try {
         const response = await fetch(
-            `${SUPABASE_URL}/rest/v1/produtos?select=id,nome,preco,imagem,descricao&order=id.desc`,
+            `${SUPABASE_URL}/rest/v1/produtos?select=id,nome,preco,imagem,descricao,link_compra&order=id.desc`,
             {
                 method: "GET",
                 headers: {
@@ -243,6 +256,7 @@ form.addEventListener("submit", async (event) => {
     const precoInput = document.getElementById("preco").value;
     const preco = precoInput === "" ? null : Number(precoInput);
     const imagem = document.getElementById("imagem").value.trim();
+    const linkCompra = document.getElementById("link_compra").value.trim();
     const descricao = document.getElementById("descricao").value.trim();
 
     if (!nome) {
@@ -263,6 +277,12 @@ form.addEventListener("submit", async (event) => {
         return;
     }
 
+    if (linkCompra && !isSafePurchaseUrl(linkCompra)) {
+        setFormMessage("O link de compra deve ser uma URL HTTPS segura.", "error");
+        document.getElementById("link_compra").focus();
+        return;
+    }
+
     saveButton.disabled = true;
     saveButton.querySelector("span:first-child").textContent = "Salvando...";
     setFormMessage("Salvando produto...");
@@ -280,6 +300,7 @@ form.addEventListener("submit", async (event) => {
                 nome,
                 preco,
                 imagem: imagem || null,
+                link_compra: linkCompra || null,
                 descricao: descricao || null
             })
         });

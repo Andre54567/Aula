@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f6f1">
+    <meta name="description" content="Conheça os detalhes das peças da Aula.">
+    <title>Produto | Aula</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="produto.css">
+    <script src="produto.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#conteudo-produto">Pular para o produto</a>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html" aria-label="Aula — página inicial">
+                <span class="brand-mark" aria-hidden="true">a.</span>
+                <span class="brand-name">aula<span class="brand-period">.</span></span>
+            </a>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a href="index.html#catalogo">Catálogo</a>
+                <a class="nav-cta" href="index.html#adicionar">Adicionar produto <span aria-hidden="true">↗</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="detail-page section-wrap" id="conteudo-produto">
+        <nav class="breadcrumbs" aria-label="Você está aqui">
+            <a href="index.html">Início</a>
+            <span aria-hidden="true">/</span>
+            <a href="index.html#catalogo">Catálogo</a>
+            <span aria-hidden="true">/</span>
+            <span id="breadcrumb-product">Produto</span>
+        </nav>
+
+        <div id="product-loading" class="detail-state" role="status">
+            <span class="loading-dot" aria-hidden="true"></span>
+            <p>Preparando os detalhes desta peça...</p>
+        </div>
+
+        <section class="product-detail" id="product-detail" aria-labelledby="product-name" hidden>
+            <div class="detail-visual" id="detail-visual">
+                <div class="detail-placeholder" aria-hidden="true">
+                    <span class="detail-placeholder-mark">a.</span>
+                    <span>IMAGEM DO PRODUTO</span>
+                </div>
+                <span class="detail-image-tag">AULA / ESSENCIAL</span>
+            </div>
+
+            <div class="detail-copy">
+                <p class="eyebrow"><span class="eyebrow-dot"></span> AULA / DETALHES DA PEÇA</p>
+                <h1 id="product-name">Nome do produto</h1>
+                <p class="detail-price" id="product-price"></p>
+                <div class="detail-rule"></div>
+
+                <div class="detail-description-block">
+                    <p class="detail-overline">SOBRE ESTA PEÇA</p>
+                    <p class="detail-description" id="product-description"></p>
+                </div>
+
+                <div class="purchase-area">
+                    <a class="button button-dark purchase-button" id="purchase-link" href="#" target="_blank" rel="noopener noreferrer" hidden>
+                        <span>Comprar agora</span><span aria-hidden="true">↗</span>
+                    </a>
+                    <p class="purchase-helper" id="purchase-helper" role="status" hidden></p>
+                    <p class="purchase-note">A finalização será feita no endereço de compra configurado para este produto.</p>
+                </div>
+
+                <a class="detail-back-link" href="index.html#catalogo"><span aria-hidden="true">←</span> Voltar para a coleção</a>
+            </div>
+        </section>
+
+        <section class="detail-state detail-error" id="product-error" role="status" hidden>
+            <span class="detail-error-mark" aria-hidden="true">—</span>
+            <h1 id="error-title">Não encontramos esta peça.</h1>
+            <p id="error-message">Confira o catálogo e escolha outro produto.</p>
+            <a class="button button-dark" href="index.html#catalogo">Voltar ao catálogo <span aria-hidden="true">↗</span></a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner section-wrap">
+            <a class="brand footer-brand" href="index.html" aria-label="Aula — voltar ao início">
+                <span class="brand-mark" aria-hidden="true">a.</span>
+                <span class="brand-name">aula<span class="brand-period">.</span></span>
+            </a>
+            <p>O essencial, bem escolhido.</p>
+            <a class="back-top" href="index.html#catalogo">Voltar à coleção ↑</a>
+        </div>
+    </footer>
+</body>
+</html>
