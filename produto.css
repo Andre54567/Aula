@@ -1,0 +1,206 @@
+/* Página de detalhes e compra do produto */
+.detail-page {
+    min-height: calc(100vh - 190px);
+    padding-top: 34px;
+    padding-bottom: 88px;
+}
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 35px;
+    color: #8a8d82;
+    font-size: 11px;
+}
+.breadcrumbs a { transition: color .2s ease; }
+.breadcrumbs a:hover { color: var(--green); }
+.breadcrumbs span[aria-hidden="true"] { color: #bec0b6; }
+#breadcrumb-product { color: #454a40; }
+
+.product-detail {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    gap: clamp(38px, 7vw, 90px);
+    align-items: start;
+    animation: product-detail-enter .55s cubic-bezier(.2,.7,.2,1) both;
+}
+.detail-visual {
+    position: relative;
+    min-width: 0;
+    min-height: 460px;
+    aspect-ratio: 4 / 4.7;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(227,226,217,.9);
+    border-radius: 18px;
+    background: #ebe9e0;
+}
+.detail-visual > img {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform .7s cubic-bezier(.2,.65,.2,1);
+    animation: product-image-enter .75s cubic-bezier(.2,.7,.2,1) both;
+}
+.detail-visual:hover > img { transform: scale(1.025); }
+.detail-image-tag {
+    position: absolute;
+    top: 17px;
+    left: 17px;
+    z-index: 2;
+    padding: 7px 10px;
+    border: 1px solid rgba(227,226,217,.7);
+    border-radius: 5px;
+    background: rgba(255,254,250,.9);
+    color: #697060;
+    font-size: 9px;
+    letter-spacing: .7px;
+    backdrop-filter: blur(8px);
+}
+.detail-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: radial-gradient(circle at 50% 40%, #f5f3ec 0 12%, transparent 12.5%), linear-gradient(145deg, #ebe9e0, #dedfd4);
+    color: #92958a;
+    font-size: 10px;
+    letter-spacing: .7px;
+}
+.detail-placeholder-mark {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 62px;
+    border: 1px solid #c9cbbf;
+    border-radius: 50%;
+    color: #7d8878;
+    font: 30px/1 var(--serif);
+}
+.detail-copy { padding-top: 18px; min-width: 0; }
+.detail-copy .eyebrow { margin-bottom: 20px; }
+.detail-copy h1 {
+    margin: 0;
+    color: var(--ink);
+    font: 600 clamp(32px, 3.5vw, 45px)/1.14 var(--display);
+    letter-spacing: -2.2px;
+    overflow-wrap: anywhere;
+}
+.detail-price {
+    margin: 18px 0 0;
+    color: var(--green);
+    font: 700 24px/1.35 var(--display);
+    letter-spacing: -.6px;
+}
+.detail-rule { height: 1px; margin: 28px 0; background: var(--line); }
+.detail-overline {
+    margin: 0 0 11px;
+    color: #7e8378;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+.detail-description {
+    margin: 0;
+    max-width: 510px;
+    color: #686d62;
+    font-size: 14px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+.purchase-area { margin-top: 32px; }
+.purchase-button {
+    width: 100%;
+    max-width: 390px;
+    min-height: 55px;
+    justify-content: space-between;
+    padding-inline: 23px;
+    font-size: 13px;
+}
+.purchase-button[hidden] { display: none; }
+.purchase-button span:last-child {
+    display: inline-grid;
+    place-items: center;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.12);
+}
+.purchase-helper {
+    margin: 0;
+    max-width: 390px;
+    padding: 14px 15px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255,254,250,.75);
+    color: #777b71;
+    font-size: 11px;
+    line-height: 1.7;
+}
+.purchase-helper[hidden] { display: none; }
+.purchase-note { max-width: 390px; margin: 13px 0 0; color: #96988f; font-size: 10px; line-height: 1.7; }
+.detail-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 35px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #d4d7cc;
+    color: #666c60;
+    font-size: 11px;
+    font-weight: 600;
+    transition: color .2s ease, border-color .2s ease;
+}
+.detail-back-link:hover { color: var(--green); border-color: var(--green); }
+.detail-state {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 35px 20px;
+    border: 1px dashed #d5d6cb;
+    border-radius: 16px;
+    color: #767a70;
+    text-align: center;
+}
+.detail-state[hidden] { display: none; }
+.detail-state p { margin: 0; font-size: 12px; line-height: 1.8; }
+.detail-error { border: 0; }
+.detail-error h1 { margin: 0; color: var(--ink); font: 600 clamp(26px, 4vw, 36px)/1.2 var(--display); letter-spacing: -1.3px; }
+.detail-error .button { margin-top: 10px; }
+.detail-error-mark { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--sage); color: var(--green); font-size: 24px; }
+@keyframes product-detail-enter {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes product-image-enter {
+    from { opacity: .65; scale: 1.02; }
+    to { opacity: 1; scale: 1; }
+}
+@media (max-width: 760px) {
+    .detail-page { padding-top: 25px; padding-bottom: 62px; }
+    .breadcrumbs { margin-bottom: 22px; }
+    .product-detail { grid-template-columns: 1fr; gap: 28px; }
+    .detail-visual { min-height: 0; aspect-ratio: 4 / 4.4; max-height: 580px; }
+    .detail-copy { padding-top: 0; }
+    .detail-copy h1 { font-size: clamp(30px, 8vw, 42px); }
+    .detail-price { font-size: 22px; }
+    .detail-rule { margin: 22px 0; }
+    .purchase-area { margin-top: 25px; }
+    .purchase-button { max-width: none; }
+    .detail-back-link { margin-top: 27px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .product-detail, .detail-visual > img { animation: none !important; }
+    .detail-visual > img, .detail-visual:hover > img { transition: none !important; transform: none !important; }
+}
