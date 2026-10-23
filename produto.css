@@ -238,3 +238,39 @@
     .detail-rule { margin:24px 0; }
     .purchase-area { margin-top:26px; }
 }
+
+
+/* Página de produto — alinhada à nova interface limpa do Aula */
+.detail-page { min-height:calc(100vh - 170px); padding-top:24px; padding-bottom:70px; }
+.breadcrumbs { padding-bottom:12px; border-color:var(--line); margin-bottom:25px; font-size:9px; text-transform:none; letter-spacing:0; }
+.product-detail { grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:clamp(28px,6vw,75px); }
+.detail-visual { aspect-ratio:1 / 1.08; min-height:0; border-radius:14px; border:1px solid var(--line); background:#eeece5; }
+.detail-visual > img { object-fit:contain; padding:22px; mix-blend-mode:multiply; }
+.detail-image-tag { top:12px; left:12px; padding:6px 8px; border-radius:999px; font-size:7px; }
+.detail-copy { padding-top:12px; }
+.detail-copy .eyebrow { margin-bottom:18px; font-size:8px; }
+.detail-copy h1 { font:700 clamp(34px,4.3vw,54px)/1.02 var(--display); letter-spacing:-2px; }
+.detail-price { margin-top:15px; font:700 18px/1.35 var(--display); color:var(--green); }
+.detail-rule { margin:24px 0; }
+.detail-overline { color:#737a70; font-size:8px; }
+.detail-description { color:#686f65; font-size:12px; line-height:1.9; }
+.purchase-area { margin-top:27px; }
+.purchase-button { max-width:390px; min-height:48px; border-radius:999px; background:var(--green); font-size:11px; letter-spacing:0; }
+.purchase-button:hover { background:var(--green-dark); }
+.purchase-helper { border-radius:9px; background:#eeece5; font-size:10px; }
+.purchase-note { font-size:9px; color:#8a8f85; }
+.detail-back-link { margin-top:27px; border-color:#c3c9bd; font-size:10px; text-transform:none; letter-spacing:0; }
+.detail-placeholder { border-radius:14px; background:linear-gradient(140deg,#e9e7df,#e1ded5); }
+@media (max-width:760px) {
+    .detail-page { padding-top:18px; padding-bottom:45px; }
+    .breadcrumbs { margin-bottom:18px; }
+    .product-detail { grid-template-columns:1fr; gap:23px; }
+    .detail-visual { aspect-ratio:1 / 1; max-height:none; border-radius:11px; }
+    .detail-visual > img { padding:14px; }
+    .detail-copy { padding-top:0; position:static; }
+    .detail-copy h1 { font-size:clamp(32px,9vw,43px); letter-spacing:-1.4px; }
+    .detail-price { font-size:17px; }
+    .detail-rule { margin:20px 0; }
+    .purchase-area { margin-top:23px; }
+    .purchase-button { max-width:none; }
+}
