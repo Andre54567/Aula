@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f7f6f1">
-    <meta name="description" content="Aula — uma curadoria de peças essenciais para o seu dia a dia.">
-    <title>Aula — Peças essenciais</title>
+    <meta name="theme-color" content="#f3efe7">
+    <meta name="description" content="Aula — uma curadoria de moda urbana, essenciais e peças com personalidade.">
+    <title>Aula — O essencial com outro olhar</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <a class="skip-link" href="#catalogo">Pular para o catálogo</a>
+    <a class="skip-link" href="#catalogo">Pular para a coleção</a>
+
+    <div class="announcement-bar">
+        <span>AULA STUDIO</span>
+        <span class="announcement-center">ROUPAS E ACESSÓRIOS COM PERSONALIDADE</span>
+        <span>EDIÇÃO 01 <span aria-hidden="true">↗</span></span>
+    </div>
 
     <header class="site-header">
         <div class="header-inner">
             <a class="brand" href="#" aria-label="Aula — página inicial">
                 <span class="brand-mark" aria-hidden="true">a.</span>
-                <span class="brand-name">aula<span class="brand-period">.</span></span>
+                <span class="brand-name">Aula<span class="brand-period">.</span></span>
             </a>
             <nav class="main-nav" aria-label="Navegação principal">
-                <a href="#catalogo">Catálogo</a>
+                <a href="#catalogo">Coleção</a>
+                <a href="#manifesto">Manifesto</a>
                 <a class="nav-cta" href="#adicionar">Adicionar produto <span aria-hidden="true">↗</span></a>
             </nav>
         </div>
@@ -28,75 +35,116 @@
     <main>
         <section class="hero section-wrap" aria-labelledby="hero-title">
             <div class="hero-copy">
-                <p class="eyebrow"><span class="eyebrow-dot"></span> FEITO PARA O DIA A DIA</p>
-                <h1 id="hero-title">Menos excesso.<br><span>Mais estilo.</span></h1>
-                <p class="hero-description">Uma curadoria de peças essenciais, escolhidas para acompanhar você em todos os momentos.</p>
+                <p class="eyebrow"><span class="eyebrow-dot"></span> MODA URBANA · CURADORIA AULA</p>
+                <p class="hero-edition">UMA NOVA LEITURA DO COTIDIANO <span>— VOL. 01</span></p>
+                <h1 id="hero-title">O essencial<br>nunca é <em>comum.</em></h1>
+                <p class="hero-description">Peças que combinam presença, conforto e personalidade. Escolhidas para acompanhar o seu próprio ritmo.</p>
                 <div class="hero-actions">
-                    <a class="button button-dark" href="#catalogo">Explorar catálogo <span aria-hidden="true">↘</span></a>
-                    <a class="text-link" href="#adicionar">Gerenciar produtos</a>
+                    <a class="button button-dark" href="#catalogo">Explorar a coleção <span aria-hidden="true">↘</span></a>
+                    <a class="text-link" href="#manifesto">Conheça a Aula <span aria-hidden="true">↗</span></a>
                 </div>
-                <div class="hero-note"><span class="note-line"></span> Simples por escolha. Especial nos detalhes.</div>
+                <div class="hero-bottomline">
+                    <span>FORMA, TEXTURA &amp; MOVIMENTO</span>
+                    <span class="hero-bottom-number">01 — 05</span>
+                </div>
             </div>
-            <div class="hero-art" aria-hidden="true">
-                <div class="art-orbit orbit-one"></div>
-                <div class="art-orbit orbit-two"></div>
-                <div class="art-panel">
-                    <div class="art-panel-top"><span>EST. ESSENCIAL</span><span>01 — 04</span></div>
-                    <div class="art-shape">
-                        <span class="shape-circle"></span>
-                        <span class="shape-arch"></span>
-                        <span class="shape-block"></span>
+
+            <a class="hero-art" id="hero-feature-link" href="#catalogo" aria-label="Explorar a coleção Aula">
+                <div class="hero-photo-frame">
+                    <div class="hero-feature-image" id="hero-feature-image">
+                        <div class="hero-image-placeholder">
+                            <span class="hero-placeholder-mark">A.</span>
+                            <span>IMAGEM DA COLEÇÃO</span>
+                        </div>
                     </div>
-                    <div class="art-panel-bottom"><span>FORMA &amp; FUNÇÃO</span><span class="art-spark">✳</span></div>
+                    <div class="hero-image-topline"><span>FIG. 01</span><span>AULA / STUDIO</span></div>
+                    <span class="hero-image-stamp">A<br>01</span>
+                    <div class="hero-image-footer">
+                        <span>THE EVERYDAY EDIT</span>
+                        <span aria-hidden="true">↗</span>
+                    </div>
                 </div>
-                <span class="art-caption caption-top">Escolhas conscientes</span>
-                <span class="art-caption caption-bottom">A sua próxima peça favorita.</span>
-            </div>
+                <div class="hero-feature-caption">
+                    <div>
+                        <span class="caption-overline">EM DESTAQUE / 01</span>
+                        <h2 id="hero-feature-name">A coleção começa aqui.</h2>
+                    </div>
+                    <span class="hero-feature-price" id="hero-feature-price">Descubra a seleção <span aria-hidden="true">↗</span></span>
+                </div>
+            </a>
         </section>
+
+        <div class="editorial-marquee" aria-label="O manifesto Aula">
+            <div class="marquee-track">
+                <span>ESTILO COM INTENÇÃO</span><i aria-hidden="true">✳</i>
+                <span>ESSENCIAIS COM PRESENÇA</span><i aria-hidden="true">✳</i>
+                <span>VISTA O SEU RITMO</span><i aria-hidden="true">✳</i>
+                <span>ESTILO COM INTENÇÃO</span><i aria-hidden="true">✳</i>
+                <span>ESSENCIAIS COM PRESENÇA</span><i aria-hidden="true">✳</i>
+                <span>VISTA O SEU RITMO</span><i aria-hidden="true">✳</i>
+            </div>
+        </div>
 
         <section class="catalog section-wrap" id="catalogo" aria-labelledby="catalog-title">
             <div class="section-heading">
-                <div>
-                    <p class="eyebrow">A COLEÇÃO</p>
-                    <h2 id="catalog-title">Peças para viver.</h2>
-                    <p class="section-subtitle">Encontre algo que tenha a sua cara.</p>
+                <div class="catalog-title-side">
+                    <p class="eyebrow"><span class="eyebrow-dot"></span> A CURADORIA / 001</p>
+                    <h2 id="catalog-title">Peças com<br><em>presença.</em></h2>
                 </div>
-                <div class="catalog-tools">
-                    <label class="search-box" for="busca">
-                        <span class="search-icon" aria-hidden="true">⌕</span>
-                        <input id="busca" type="search" placeholder="Buscar uma peça" autocomplete="off">
-                        <span class="search-shortcut" aria-hidden="true">↵</span>
-                    </label>
-                    <p class="product-count" id="contagem" aria-live="polite">Carregando peças...</p>
+                <div class="catalog-heading-side">
+                    <p>Não é sobre ter mais.<br>É sobre escolher melhor.</p>
+                    <div class="catalog-tools">
+                        <label class="search-box" for="busca">
+                            <span class="search-icon" aria-hidden="true">⌕</span>
+                            <input id="busca" type="search" placeholder="Buscar uma peça" autocomplete="off">
+                            <span class="search-shortcut" aria-hidden="true">↵</span>
+                        </label>
+                        <p class="product-count" id="contagem" aria-live="polite">Carregando peças...</p>
+                    </div>
                 </div>
             </div>
 
+            <div class="catalog-rule"><span>SELEÇÃO AULA</span><span>PEÇAS ESSENCIAIS / TODOS OS DIAS</span></div>
             <div id="lista" class="product-grid" aria-live="polite" aria-busy="true">
                 <div class="catalog-loading"><span class="loading-dot"></span> Preparando a coleção...</div>
             </div>
             <p id="mensagem-catalogo" class="catalog-message" role="status"></p>
+            <div class="catalog-foot"><span>FOTOGRAFIA, FORMA E IDENTIDADE.</span><a href="#adicionar">Conhece uma peça que falta aqui? <span aria-hidden="true">↗</span></a></div>
+        </section>
+
+        <section class="manifesto section-wrap" id="manifesto" aria-labelledby="manifesto-title">
+            <div class="manifesto-index"><span>NOTA DE ESTILO</span><strong>02<span>/</span>03</strong></div>
+            <div class="manifesto-main">
+                <p class="eyebrow">O MANIFESTO AULA</p>
+                <h2 id="manifesto-title">Vista menos ruído.<br><em>Mais você.</em></h2>
+            </div>
+            <div class="manifesto-copy">
+                <p>Acreditamos nas peças que ficam. Na combinação entre conforto, forma e autenticidade. No estilo que não precisa de esforço para ser notado.</p>
+                <span class="manifesto-signature">Aula Studio <i aria-hidden="true">✳</i></span>
+            </div>
         </section>
 
         <section class="manage-section" id="adicionar" aria-labelledby="manage-title">
             <div class="manage-inner section-wrap">
                 <div class="manage-copy">
-                    <p class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> SUA VITRINE</p>
-                    <h2 id="manage-title">Uma nova peça,<br><span>novas possibilidades.</span></h2>
-                    <p>Inclua os detalhes do produto e deixe que ele encontre seu lugar na coleção.</p>
-                    <div class="manage-footnote"><span class="manage-footnote-icon" aria-hidden="true">✳</span> Nome, valor, imagem e uma boa descrição. Só o essencial.</div>
+                    <p class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> A SUA VITRINE</p>
+                    <p class="manage-kicker">EDIÇÃO ABERTA / AULA STUDIO</p>
+                    <h2 id="manage-title">Cada peça<br>tem uma <em>história.</em></h2>
+                    <p>Adicione os detalhes do produto e dê a ele um lugar na coleção.</p>
+                    <div class="manage-footnote"><span class="manage-footnote-icon" aria-hidden="true">✳</span> Imagem, nome, preço e descrição. O essencial para começar.</div>
                 </div>
                 <form class="product-form" id="form-produto">
                     <div class="form-heading">
                         <div>
-                            <p class="eyebrow">CADASTRO</p>
+                            <p class="eyebrow">CADASTRO / AULA</p>
                             <h3>Adicionar produto</h3>
                         </div>
-                        <span class="form-index">01 / 04</span>
+                        <span class="form-index">01 — 04</span>
                     </div>
 
                     <div class="field">
                         <label for="nome">Nome do produto <span>*</span></label>
-                        <input id="nome" name="nome" placeholder="Ex.: Camisa de linho" required maxlength="120" autocomplete="off">
+                        <input id="nome" name="nome" placeholder="Ex.: Casaco puffer azul-escuro" required maxlength="120" autocomplete="off">
                     </div>
 
                     <div class="form-row">
@@ -118,7 +166,7 @@
 
                     <div class="field">
                         <label for="descricao">Descrição</label>
-                        <textarea id="descricao" name="descricao" rows="3" maxlength="500" placeholder="Fale sobre tecido, caimento, cores..."></textarea>
+                        <textarea id="descricao" name="descricao" rows="3" maxlength="500" placeholder="Fale sobre tecido, caimento, cor e detalhes..."></textarea>
                     </div>
 
                     <button class="button button-dark form-submit" id="botao-salvar" type="submit">
@@ -135,11 +183,12 @@
         <div class="footer-inner section-wrap">
             <a class="brand footer-brand" href="#" aria-label="Aula — voltar ao topo">
                 <span class="brand-mark" aria-hidden="true">a.</span>
-                <span class="brand-name">aula<span class="brand-period">.</span></span>
+                <span class="brand-name">Aula<span class="brand-period">.</span></span>
             </a>
-            <p>O essencial, bem escolhido.</p>
-            <a class="back-top" href="#">Voltar ao topo ↑</a>
+            <p>Essencial, com intenção.</p>
+            <a class="back-top" href="#">Voltar ao início ↑</a>
         </div>
+        <div class="footer-bottom section-wrap"><span>© AULA STUDIO</span><span>FEITO PARA O SEU PRÓPRIO RITMO.</span><span>VOL. 01 / BRASIL</span></div>
     </footer>
 </body>
 </html>
