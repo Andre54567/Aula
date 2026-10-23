@@ -258,3 +258,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
     .hero-art:hover .hero-feature-image img, .product-card:hover, .product-card:hover .product-image img { transform:none !important; }
 }
+
+/* Entradas suaves dos elementos: preserva movimento reduzido do sistema */
+html.motion-enabled .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .55s ease, transform .55s ease;
+    transition-delay: var(--reveal-delay, 0ms);
+}
+html.motion-enabled .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+    html.motion-enabled .reveal-on-scroll,
+    html.motion-enabled .reveal-on-scroll.is-visible {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
