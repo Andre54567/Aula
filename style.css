@@ -198,7 +198,7 @@ button { color: inherit; }
 .product-count { margin: 0; color: #85877e; font-size: 11px; }
 
 .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 19px; }
-.product-card { min-width: 0; border-radius: 13px; transition: transform .38s cubic-bezier(.2,.65,.2,1), box-shadow .38s ease; }
+.product-card { display: block; min-width: 0; border-radius: 13px; color: inherit; text-decoration: none; transition: transform .38s cubic-bezier(.2,.65,.2,1), box-shadow .38s ease; }
 .product-card:hover { transform: translateY(-5px); }
 .product-card:hover .product-price { color: var(--green-dark); }
 .product-image { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 4.8; overflow: hidden; border-radius: 13px; background: #ebe9e0; }
@@ -236,6 +236,7 @@ button { color: inherit; }
 .form-index { color: #a2a498; font-size: 10px; letter-spacing: .8px; }
 .field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 17px; }
 .field label { color: #555b50; font-size: 11px; font-weight: 700; }
+.field-hint { margin: -2px 0 0; color: #92958a; font-size: 10px; line-height: 1.5; }
 .field label span { color: #9c634f; }
 .field input, .field textarea { width: 100%; min-width: 0; padding: 12px 13px; border: 1px solid #e2e2d9; border-radius: 7px; outline: 0; background: #fcfbf7; color: var(--ink); font-size: 12px; transition: border-color .2s ease, box-shadow .2s ease; }
 .field input { min-height: 44px; }
