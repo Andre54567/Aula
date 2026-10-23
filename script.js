@@ -12,6 +12,58 @@ const saveButton = document.getElementById("botao-salvar");
 let products = [];
 let revealObserver = null;
 
+function renderHeroFeature() {
+    const featureLink = document.getElementById("hero-feature-link");
+    const featureImage = document.getElementById("hero-feature-image");
+    const featureName = document.getElementById("hero-feature-name");
+    const featurePrice = document.getElementById("hero-feature-price");
+    if (!featureLink || !featureImage || !featureName || !featurePrice) return;
+
+    const product = products[0];
+    const existingImage = featureImage.querySelector("img");
+    if (existingImage) existingImage.remove();
+    featureImage.querySelector(".hero-image-placeholder")?.remove();
+
+    if (!product) {
+        featureLink.href = "#catalogo";
+        featureLink.setAttribute("aria-label", "Explorar a coleção Aula");
+        featureName.textContent = "A coleção começa aqui.";
+        featurePrice.textContent = "Descubra a seleção ↗";
+        const fallback = document.createElement("div");
+        fallback.className = "hero-image-placeholder";
+        fallback.innerHTML = '<span class="hero-placeholder-mark">A.</span><span>IMAGEM DA COLEÇÃO</span>';
+        featureImage.appendChild(fallback);
+        return;
+    }
+
+    featureLink.href = "produto.html?id=" + encodeURIComponent(product.id);
+    featureLink.setAttribute("aria-label", "Ver detalhes de " + (product.nome || "produto"));
+    featureName.textContent = product.nome || "Produto em destaque";
+    featurePrice.textContent = formatPrice(product.preco);
+
+    if (isSafeImageUrl(product.imagem)) {
+        const image = document.createElement("img");
+        image.src = product.imagem;
+        image.alt = product.nome ? "Em destaque: " + product.nome : "Produto em destaque";
+        image.loading = "eager";
+        image.decoding = "async";
+        image.referrerPolicy = "no-referrer";
+        image.addEventListener("error", () => {
+            image.remove();
+            const fallback = document.createElement("div");
+            fallback.className = "hero-image-placeholder";
+            fallback.innerHTML = '<span class="hero-placeholder-mark">A.</span><span>IMAGEM NÃO DISPONÍVEL</span>';
+            featureImage.appendChild(fallback);
+        }, { once: true });
+        featureImage.appendChild(image);
+    } else {
+        const fallback = document.createElement("div");
+        fallback.className = "hero-image-placeholder";
+        fallback.innerHTML = '<span class="hero-placeholder-mark">A.</span><span>IMAGEM DA COLEÇÃO</span>';
+        featureImage.appendChild(fallback);
+    }
+}
+
 function observeReveal(element, delay = 0) {
     if (!revealObserver || !element) return;
     element.classList.add("reveal-on-scroll");
@@ -38,7 +90,7 @@ function initializeScrollAnimations() {
     });
 
     const targets = document.querySelectorAll(
-        ".hero-copy, .hero-art, .section-heading, .manage-copy, .product-form, .footer-inner"
+        ".hero-copy, .hero-art, .section-heading, .manage-copy, .product-form, .footer-inner, .manifesto-main, .manifesto-copy"
     );
     targets.forEach((element, index) => observeReveal(element, (index % 3) * 90));
 }
@@ -236,6 +288,7 @@ async function listarProdutos() {
         }
 
         products = data;
+        renderHeroFeature();
         renderProducts();
     } catch (error) {
         productList.replaceChildren(
